@@ -9,6 +9,9 @@ sudo apt-get update
 #Atualizando versões
 sudo apt-get upgrade -y
 
+#Instalando pacote de idiomas completos
+sudo apt-get install language-pack-gnome-pt language-pack-pt-base
+
 #Instalando o Google Chrome
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 
@@ -44,6 +47,9 @@ sudo add-apt-repository ppa:nicola-onorata/desktop
 sudo apt-get update
 
 sudo apt-get install vlc -y
+
+#Instalando o ZRAM
+sudo apt-get install zram-config
 
 #Removendo pacotes que não serão mais utilizados
 sudo apt autoremove -y
