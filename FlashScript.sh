@@ -29,12 +29,14 @@ sudo ln -sf /opt/dropbox/dropboxd /usr/bin/dropbox
 
 echo -e '[Desktop Entry]\n Version=1.0\n Name=dropbox\n Exec=/opt/dropbox/dropboxd\n Icon=/ \n Type=Application\n Categories=Application' | sudo tee /usr/share/applications/dropbox.desktop
 
-#Instalando OpenJDK 8
-sudo add-apt-repository ppa:openjdk-r/ppa
+#Instalando JDK 9
+sudo add-apt-repository ppa:webupd8team/java -y
 
 sudo apt-get update -y
 
-sudo apt-get install openjdk-8-jdk
+sudo apt-get install oracle-java9-installer -y
+
+sudo apt-get install oracle-java9-set-default -y
 
 #Instalando Sublime Text 3
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -50,12 +52,22 @@ sudo apt-get install git -y
 
 git config --global user.name "CristianoNunes"
 
-git config --global user.email cristianonunes9@hotmail.com
+git config --global user.email "cristianonunes9@hotmail.com"
 
 #Instalando VLC
 sudo add-apt-repository ppa:videolan/stable-daily
 
 sudo add-apt-repository ppa:nicola-onorata/desktop
+
+#Configurando ambiente de Desenvolvimento Python e Django
+#Instalando Pip
+sudo apt-get install python-pip -y
+
+#Instalando Virtualenv
+sudo pip install virtualenv -y
+
+#instalando Virtualenvwrapper
+pip install virtualenvwrapper
 
 sudo apt-get update
 
