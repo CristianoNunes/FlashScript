@@ -63,6 +63,9 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 sudo apt-get update -y &&
 sudo apt-get install spotify-client -y &&
 
+#Instalando Shotwell Photo Manager
+sudo add-apt-repository ppa:yg-jensge/shotwell -y && sudo apt update && sudo apt install shotwell -y &&
+
 #Removendo Libre Office
 sudo apt-get remove --purge libreoffice* -y &&
 
