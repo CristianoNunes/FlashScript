@@ -31,14 +31,14 @@ git config --global user.email "cristianonunes9@hotmail.com"
 #Instalando Dropbox
 git clone https://github.com/zant95/elementary-dropbox /tmp/elementary-dropbox && bash /tmp/elementary-dropbox/install.sh
 
-#Instalando JDK 9
+#Instalando Oracle JDK 8
 sudo add-apt-repository ppa:webupd8team/java -y
 
 sudo apt-get update -y
 
-sudo apt-get install oracle-java9-installer -y
+sudo apt-get install oracle-java8-installer -y
 
-sudo apt-get install oracle-java9-set-default -y
+sudo apt-get install oracle-java8-set-default -y
 
 #Instalando Sublime Text 3
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
