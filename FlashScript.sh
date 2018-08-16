@@ -102,7 +102,7 @@ sudo apt-get update &&
 sudo apt-get upgrade -y &&
 
 #Removendo pacotes que não serão mais utilizados
-sudo apt autoremove -y
+sudo apt autoremove -y &&
 
 #Instalando Dropbox
 git clone https://github.com/zant95/elementary-dropbox /tmp/elementary-dropbox && bash /tmp/elementary-dropbox/install.sh
