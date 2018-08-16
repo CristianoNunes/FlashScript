@@ -64,6 +64,11 @@ sudo -H pip install virtualenv &&
 #instalando Virtualenvwrapper
 sudo -H pip install virtualenvwrapper &&
 
+#Instalando NVM
+sudo apt-get update && sudo apt-get install build-essential libssl-dev -y
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+source ~/.bashrc
+
 #Instalando o descompactador RAR
 sudo apt-get install rar -y &&
 
