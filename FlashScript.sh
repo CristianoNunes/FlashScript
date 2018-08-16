@@ -4,7 +4,7 @@
 sudo apt-get clean &&
 
 #Atualizando pacotes
-sudo apt-get update -y &&
+sudo apt-get update &&
 
 #Atualizando versões
 sudo apt-get upgrade -y &&
@@ -24,16 +24,19 @@ sudo apt install ubuntu-restricted-extras -y &&
 #Instalando o Google Chrome
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' &&
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - &&
-sudo apt-get update -y &&
+sudo apt-get update &&
 sudo apt-get install google-chrome-stable -y &&
 
 #Instalando Git
 sudo apt-get install git -y &&
 git config --global user.name "CristianoNunes" &&
 
+#Instalando Libs para o Android Studio
+sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6 -y &&
+
 #Instalando Oracle JDK 8
 sudo add-apt-repository ppa:webupd8team/java -y &&
-sudo apt-get update -y &&
+sudo apt-get update &&
 sudo apt-get install oracle-java8-installer -y &&
 sudo apt-get install oracle-java8-set-default -y &&
 
@@ -65,9 +68,14 @@ sudo -H pip install virtualenv &&
 sudo -H pip install virtualenvwrapper &&
 
 #Instalando NVM
-sudo apt-get update && sudo apt-get install build-essential libssl-dev -y
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-source ~/.bashrc
+sudo apt-get update &&
+sudo apt-get install build-essential libssl-dev -y &&
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash &&
+source ~/.bashrc &&
+nvm install 8.11.4 &&
+
+#Instalando React Native
+npm install -g react-native-cli &&
 
 #Instalando o descompactador RAR
 sudo apt-get install rar -y &&
