@@ -12,6 +12,15 @@ sudo apt-get upgrade -y &&
 #Atualizando SO
 sudo apt-get dist-upgrade -y &&
 
+#Instalando PPAs e pacote.deb
+sudo apt install software-properties-common gdebi -y &&
+
+#Instlando Gerenciador Gráfico de PPAs
+sudo apt install software-properties-gtk -y &&
+
+#Instalando Codecs
+sudo apt install ubuntu-restricted-extras -y &&
+
 #Instalando o Google Chrome
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' &&
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - &&
@@ -22,45 +31,46 @@ sudo apt-get install google-chrome-stable -y &&
 sudo apt-get install git -y &&
 git config --global user.name "CristianoNunes" &&
 
-#Instalando Dropbox
-git clone https://github.com/zant95/elementary-dropbox /tmp/elementary-dropbox && bash /tmp/elementary-dropbox/install.sh &&
-
 #Instalando Oracle JDK 8
 sudo add-apt-repository ppa:webupd8team/java -y &&
 sudo apt-get update -y &&
 sudo apt-get install oracle-java8-installer -y &&
 sudo apt-get install oracle-java8-set-default -y &&
 
+#Instalando VirtualBox
+wget https://download.virtualbox.org/virtualbox/5.2.16/virtualbox-5.2_5.2.16-123759~Ubuntu~xenial_amd64.deb
+
 #Instalando Sublime Text 3
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - &&
+sudo apt-get install apt-transport-https -y &&
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list &&
-sudo apt-get update -y &&
+sudo apt-get update &&
 sudo apt-get install sublime-text -y &&
 
 #Instalando VLC
-sudo add-apt-repository ppa:videolan/stable-daily &&
-sudo add-apt-repository ppa:nicola-onorata/desktop &&
+sudo add-apt-repository ppa:videolan/stable-daily -y &&
+sudo add-apt-repository ppa:nicola-onorata/desktop -y &&
 sudo apt-get update -y &&
 sudo apt-get install vlc -y &&
 
 #Configurando ambiente de Desenvolvimento Python e Django
 #Instalando Pip
 sudo apt-get install python-pip -y &&
-sudo pip install --upgrade pip -y &&
+sudo -H pip install --upgrade pip &&
 
 #Instalando Virtualenv
-sudo -H pip install virtualenv -y &&
+sudo -H pip install virtualenv &&
 
 #instalando Virtualenvwrapper
-sudo -H pip install virtualenvwrapper -y &&
+sudo -H pip install virtualenvwrapper &&
 
 #Instalando o descompactador RAR
-sudo apt-get install rar &&
+sudo apt-get install rar -y &&
 
 #Instalando Spotify
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410 -y &&
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90 &&
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list &&
-sudo apt-get update -y &&
+sudo apt-get update &&
 sudo apt-get install spotify-client -y &&
 
 #Instalando Shotwell Photo Manager
@@ -73,10 +83,13 @@ sudo apt-get remove --purge libreoffice* -y &&
 sudo apt-get clean &&
 
 #Atualizando pacotes
-sudo apt-get update -y &&
+sudo apt-get update &&
 
 #Atualizando versões
 sudo apt-get upgrade -y &&
 
 #Removendo pacotes que não serão mais utilizados
 sudo apt autoremove -y
+
+#Instalando Dropbox
+git clone https://github.com/zant95/elementary-dropbox /tmp/elementary-dropbox && bash /tmp/elementary-dropbox/install.sh
