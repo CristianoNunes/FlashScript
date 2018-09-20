@@ -21,7 +21,10 @@ sudo apt install software-properties-gtk -y &&
 #Instalando Codecs
 sudo apt install ubuntu-restricted-extras -y &&
 
-#Instalando Tweal Tools
+#Instalando Tweak Tools
+#Ubuntu
+sudo apt install gnome-tweak-tool -y &&
+#Elementary
 sudo add-apt-repository -y ppa:philip.scott/elementary-tweaks && sudo apt update && sudo apt install -y elementary-tweaks &&
 
 #Instalando o Google Chrome
