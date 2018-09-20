@@ -85,10 +85,11 @@ nvm install 8.11.4 &&
 npm install -g react-native-cli &&
 
 #Instalando Franz 5.0
-wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz_5.0.0-beta.18_amd64.deb
+wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz_5.0.0-beta.18_amd64.deb &&
+sudo dpkg -i franz_5.0.0-beta.18_amd64.deb -y &&
 
-#Instalando o descompactador RAR
-sudo apt-get install rar -y &&
+#Instalando o descompactadores
+sudo apt-get install zip unzip rar unrar -y &&
 
 #Instalando Spotify
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90 &&
@@ -101,6 +102,12 @@ sudo add-apt-repository ppa:yg-jensge/shotwell -y && sudo apt update && sudo apt
 
 #Removendo Libre Office
 sudo apt-get remove --purge libreoffice* -y &&
+
+#Instalando WPS Office
+wget http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_amd64.deb &&
+sudo dpkg -i wps-office_10.1.0.6757_amd64.deb -y &&
+wget http://wps-community.org/download/dicts/pt_BR.zip &&
+sudo unzip pt_BR.zip -d /opt/kingsoft/wps-office/office6/dicts/spellcheck/ -y &&
 
 #Limpando repositórios de pacotes
 sudo apt-get clean &&
