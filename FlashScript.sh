@@ -44,7 +44,11 @@ sudo apt-get install oracle-java8-installer -y &&
 sudo apt-get install oracle-java8-set-default -y &&
 
 #Instalando VirtualBox
-wget https://download.virtualbox.org/virtualbox/5.2.16/virtualbox-5.2_5.2.16-123759~Ubuntu~xenial_amd64.deb
+sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" >> /etc/apt/sources.list.d/virtualbox.list' &&
+wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - &&
+wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add - &&
+sudo apt-get update &&
+sudo apt-get install virtualbox -y &&
 
 #Instalando Sublime Text 3
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - &&
@@ -79,6 +83,9 @@ nvm install 8.11.4 &&
 
 #Instalando React Native
 npm install -g react-native-cli &&
+
+#Instalando Franz 5.0
+wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz_5.0.0-beta.18_amd64.deb
 
 #Instalando o descompactador RAR
 sudo apt-get install rar -y &&
