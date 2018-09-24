@@ -18,6 +18,9 @@ sudo apt install software-properties-common gdebi -y &&
 #Instlando Gerenciador Gráfico de PPAs
 sudo apt install software-properties-gtk -y &&
 
+#Instlando Curl
+sudo apt install curl -y &&
+
 #Instalando Codecs
 sudo apt install ubuntu-restricted-extras -y &&
 
@@ -82,9 +85,11 @@ sudo apt-get update &&
 sudo apt-get install build-essential libssl-dev -y &&
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash &&
 source ~/.bashrc &&
-nvm install 8.11.4 &&
+source ~/.profile &&
+nvm install 8.12.0 &&
 
 #Instalando React Native
+npm install -g react-native &&
 npm install -g react-native-cli &&
 
 #Instalando Franz 5.0
