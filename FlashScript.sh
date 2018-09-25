@@ -113,7 +113,7 @@ sudo apt-get remove --purge libreoffice* -y &&
 
 #Instalando WPS Office
 wget http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_amd64.deb &&
-sudo dpkg -i wps-office_10.1.0.6757_amd64.deb -y &&
+sudo dpkg -i wps-office_10.1.0.6757_amd64.deb &&
 wget http://wps-community.org/download/dicts/pt_BR.zip &&
 sudo unzip pt_BR.zip -d /opt/kingsoft/wps-office/office6/dicts/spellcheck/ -y &&
 
