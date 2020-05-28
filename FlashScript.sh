@@ -12,42 +12,55 @@ sudo apt-get upgrade -y &&
 #Atualizando SO
 sudo apt-get dist-upgrade -y &&
 
-#Instalando PPAs e pacote.deb
-sudo apt install software-properties-common gdebi -y &&
-
-#Instlando Gerenciador Gráfico de PPAs
-sudo apt install software-properties-gtk -y &&
-
-#Instlando Curl
-sudo apt install curl -y &&
-
-#Instalando Codecs
-sudo apt install ubuntu-restricted-extras -y &&
-
-#Instalando Tweak Tools
-#Ubuntu
-sudo apt install gnome-tweak-tool -y &&
-#Elementary
-sudo add-apt-repository -y ppa:philip.scott/elementary-tweaks && sudo apt update && sudo apt install -y elementary-tweaks &&
-
-#Instalando o Google Chrome
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' &&
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - &&
-sudo apt-get update &&
-sudo apt-get install google-chrome-stable -y &&
+#Instalando curl'
+echo 'Instalando curl' 
+sudo apt install curl -y
 
 #Instalando Git
-sudo apt-get install git -y &&
-git config --global user.name "CristianoNunes" &&
+echo 'Instalando git' 
+sudo apt install git -y
 
-#Instalando Libs para o Android Studio
-sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6 -y &&
+#Configurando usuario do GIT
+echo "Qual seu nome de usuario GIT?"
+read git_config_user_name
+git config --global user.name "$git_config_user_name"
+clear
+
+#Configurando e-mail do GIT
+echo "Digite o email que deseja configurar para o GIT ?"
+read git_config_user_email
+git config --global user.email $git_config_user_email
+clear
+
+#Instalando NVM
+echo 'Instalando NVM'
+sh -c "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash)" &&
+source ~/.bashrc &&
+source ~/.profile &&
+nvm install 12.17.0 &&
+nvm alias default 12.17.0 &&
+
+#Instalando o yarn
+echo 'Instalando Yarn'
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list &&
+sudo apt update &&
+sudo apt install --no-install-recommends yarn -y &&
 
 #Instalando Oracle JDK 8
-sudo add-apt-repository ppa:webupd8team/java -y &&
+echo 
+sudo add-apt-repository ppa:openjdk-r/ppa -y &&
 sudo apt-get update &&
-sudo apt-get install oracle-java8-installer -y &&
-sudo apt-get install oracle-java8-set-default -y &&
+sudo apt-get install openjdk-8-jdk &&
+echo 'Escolha a versão do java que deseja usar'
+sudo update-alternatives --config java &&
+
+#Instalando Libs para o Android Studio
+sudo apt-get install gcc-multilib lib32z1 lib32stdc++6 &&
+
+#Instalando React Native
+npm install -g react-native &&
+npm install -g react-native-cli &&
 
 #Instalando VirtualBox
 sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" >> /etc/apt/sources.list.d/virtualbox.list' &&
@@ -55,48 +68,22 @@ wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-
 wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add - &&
 sudo apt-get update &&
 sudo apt-get install virtualbox -y &&
+echo 'Qual seu nome de usuario'
+read user_name
+sudo adduser $user_name vboxusers &&
 
-#Instalando Sublime Text 3
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - &&
-sudo apt-get install apt-transport-https -y &&
-echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list &&
+#Instalando o Google Chrome
+echo 'Instalando Google Chrome'
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' &&
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - &&
 sudo apt-get update &&
-sudo apt-get install sublime-text -y &&
+sudo apt-get install google-chrome-stable -y &&
 
 #Instalando VLC
 sudo add-apt-repository ppa:videolan/stable-daily -y &&
 sudo add-apt-repository ppa:nicola-onorata/desktop -y &&
 sudo apt-get update -y &&
 sudo apt-get install vlc -y &&
-
-#Configurando ambiente de Desenvolvimento Python e Django
-#Instalando Pip
-sudo apt-get install python-pip -y &&
-sudo -H pip install --upgrade pip &&
-
-#Instalando Virtualenv
-sudo -H pip install virtualenv &&
-
-#Instalando Virtualenvwrapper
-sudo -H pip install virtualenvwrapper &&
-
-#Instalando NVM
-sudo apt-get update &&
-sudo apt-get install build-essential libssl-dev -y &&
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash &&
-source ~/.bashrc &&
-source ~/.profile &&
-nvm install 10.13.0 &&
-
-#Instalando o yarn
-curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - &&
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list &&
-sudo apt-get update &&
-sudo apt-get install --no-install-recommends yarn -y &&
-
-#Instalando React Native
-npm install -g react-native &&
-npm install -g react-native-cli &&
 
 #Instalando Franz 5.0
 wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz_5.0.0-beta.18_amd64.deb &&
@@ -106,10 +93,8 @@ sudo dpkg -i franz_5.0.0-beta.18_amd64.deb -y &&
 sudo apt-get install zip unzip rar unrar -y &&
 
 #Instalando Spotify
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 931FF8E79F0876134EDDBDCCA87FF9DF48BF1C90 &&
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list &&
-sudo apt-get update &&
-sudo apt-get install spotify-client -y &&
+echo 'Instalando Spotify' 
+snap install spotify &&
 
 #Instalando Shotwell Photo Manager
 sudo add-apt-repository ppa:yg-jensge/shotwell -y && sudo apt update && sudo apt install shotwell -y &&
@@ -127,13 +112,4 @@ sudo unzip pt_BR.zip -d /opt/kingsoft/wps-office/office6/dicts/spellcheck/ -y &&
 sudo apt-get clean &&
 
 #Atualizando pacotes
-sudo apt-get update &&
-
-#Atualizando versões
-sudo apt-get upgrade -y &&
-
-#Removendo pacotes que não serão mais utilizados
-sudo apt autoremove -y &&
-
-#Instalando Dropbox
-git clone https://github.com/zant95/elementary-dropbox /tmp/elementary-dropbox && bash /tmp/elementary-dropbox/install.sh
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade && sudo apt autoremove -y &&
