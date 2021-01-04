@@ -107,6 +107,13 @@ echo 'Instalando Franz'
 wget https://github.com/meetfranz/franz/releases/download/v5.6.1/franz_5.6.1_amd64.deb &&
 sudo dpkg -i franz_5.6.1_amd64.deb -y &&
 
+#Instalando Dropbox
+echo 'Instalando Dropbox'
+wget "http://www.dropbox.com/download/?plat=lnx.x86_64" -O dropbox.tar.gz &&
+sudo tar -xvf dropbox.tar.gz -C /opt/ &&
+sudo mv /opt/.dropbox-dist/ /opt/dropbox &&
+sudo ln -sf /opt/dropbox/dropboxd /usr/bin/dropbox &&
+
 #Instalando o descompactadores
 echo 'Instalando Descompactadores'
 sudo apt-get install zip unzip rar unrar -y &&
@@ -128,10 +135,10 @@ sudo apt-get install papirus-gtk-icon-theme -y &&
 sudo apt-get remove --purge libreoffice* -y &&
 
 #Instalando WPS Office
-#wget http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_amd64.deb &&
-#sudo dpkg -i wps-office_10.1.0.6757_amd64.deb &&
-#wget http://wps-community.org/download/dicts/pt_BR.zip &&
-#sudo unzip pt_BR.zip -d /opt/kingsoft/wps-office/office6/dicts/spellcheck/ -y &&
+echo 'Instalando WPS Office'
+wget http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_x86_64.tar.xz -O wpsoffice.tar.xz &&
+sudo tar Jxf wpsoffice.tar.xz -C /opt/ &&
+sudo mv /opt/wps*/ /opt/wpsoffice &&
 
 #Limpando repositórios de pacotes
 sudo apt-get clean &&
