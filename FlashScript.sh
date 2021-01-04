@@ -66,13 +66,19 @@ npm install -g react-native-cli &&
 
 #Instalando ReactJS
 echo 'Instalando ReactJS'
-yarn global add create-react-app
+yarn global add create-react-app &&
+
+#Instalando Zoom
+echo 'Instalando Zoom'
+wget https://zoom.us/client/latest/zoom_amd64.deb &&
+sudo dpkg -i zoom_amd64.deb
 
 #Instalando Slack
 echo 'Instalando Slack'
 sudo apt-get install slack-desktop -y &&
 
 #Instalando VirtualBox
+echo 'Instalando Virtualbox'
 sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" >> /etc/apt/sources.list.d/virtualbox.list' &&
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add - &&
 wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add - &&
@@ -90,16 +96,19 @@ sudo apt-get update &&
 sudo apt-get install google-chrome-stable -y &&
 
 #Instalando VLC
+echo 'Instalando VLC'
 sudo add-apt-repository ppa:videolan/stable-daily -y &&
 sudo add-apt-repository ppa:nicola-onorata/desktop -y &&
 sudo apt-get update -y &&
 sudo apt-get install vlc -y &&
 
-#Instalando Franz 5.0
-wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.18/franz_5.0.0-beta.18_amd64.deb &&
-sudo dpkg -i franz_5.0.0-beta.18_amd64.deb -y &&
+#Instalando Franz
+echo 'Instalando Franz'
+wget https://github.com/meetfranz/franz/releases/download/v5.6.1/franz_5.6.1_amd64.deb &&
+sudo dpkg -i franz_5.6.1_amd64.deb -y &&
 
 #Instalando o descompactadores
+echo 'Instalando Descompactadores'
 sudo apt-get install zip unzip rar unrar -y &&
 
 #Instalando Spotify
@@ -113,10 +122,10 @@ sudo add-apt-repository ppa:yg-jensge/shotwell -y && sudo apt update && sudo apt
 sudo apt-get remove --purge libreoffice* -y &&
 
 #Instalando WPS Office
-wget http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_amd64.deb &&
-sudo dpkg -i wps-office_10.1.0.6757_amd64.deb &&
-wget http://wps-community.org/download/dicts/pt_BR.zip &&
-sudo unzip pt_BR.zip -d /opt/kingsoft/wps-office/office6/dicts/spellcheck/ -y &&
+#wget http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.6757_amd64.deb &&
+#sudo dpkg -i wps-office_10.1.0.6757_amd64.deb &&
+#wget http://wps-community.org/download/dicts/pt_BR.zip &&
+#sudo unzip pt_BR.zip -d /opt/kingsoft/wps-office/office6/dicts/spellcheck/ -y &&
 
 #Limpando repositórios de pacotes
 sudo apt-get clean &&
