@@ -165,6 +165,12 @@ echo 'Instalando AnyDesk'
 wget https://download.anydesk.com/linux/anydesk_6.0.1-1_amd64.deb -O anydesk.deb &&
 sudo apt install ./anydesk.deb &&
 
+#Instalando Stacer
+echo 'Instalando Stacer'
+sudo add-apt-repository ppa:oguzhaninan/stacer -y &&
+sudo apt-get update &&
+sudo apt-get install stacer -y &&
+
 #Limpando repositórios de pacotes
 sudo apt-get clean &&
 
