@@ -147,6 +147,11 @@ sudo tar -xJf teamviewer.tar.xz &&
 sudo mv ~/teamviewer /opt &&
 sudo ln -sf /opt/teamviewer/teamviewer /usr/bin/teamviewer &&
 
+#Instalando AnyDesk
+echo 'Instalando AnyDesk'
+wget https://download.anydesk.com/linux/anydesk_6.0.1-1_amd64.deb -O anydesk.deb &&
+sudo apt install ./anydesk.deb &&
+
 #Limpando repositórios de pacotes
 sudo apt-get clean &&
 
