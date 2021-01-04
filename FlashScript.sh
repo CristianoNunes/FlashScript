@@ -56,12 +56,17 @@ echo 'Escolha a versão do java que deseja usar'
 sudo update-alternatives --config java &&
 
 #Instalando Libs para o Android Studio
+echo 'Instalando libs do Android Studio'
 sudo apt-get install gcc-multilib lib32z1 lib32stdc++6 &&
 
 #Instalando React Native
 echo 'Instalando React Native'
 npm install -g react-native &&
 npm install -g react-native-cli &&
+
+#Instalando ReactJS
+echo 'Instalando ReactJS'
+yarn global add create-react-app
 
 #Instalando Slack
 echo 'Instalando Slack'
