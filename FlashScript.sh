@@ -40,7 +40,7 @@ source ~/.profile &&
 nvm install 14.15.4 &&
 nvm alias default 14.15.4 &&
 
-#Instalando o yarn
+#Instalando o Yarn
 echo 'Instalando Yarn'
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list &&
@@ -67,6 +67,13 @@ npm install -g react-native-cli &&
 #Instalando ReactJS
 echo 'Instalando ReactJS'
 yarn global add create-react-app &&
+
+#Instalando Visual Studio Code
+echo 'Instalando Visual Studio Code'
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" &&
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add - &&
+sudo apt-get update &&
+sudo apt-get install code &&
 
 #Instalando Zoom
 echo 'Instalando Zoom'
