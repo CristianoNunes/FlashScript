@@ -34,11 +34,11 @@ clear
 
 #Instalando NVM
 echo 'Instalando NVM'
-sh -c "$(curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.3/install.sh | bash)" &&
+sh -c "$(curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash)" &&
 source ~/.bashrc &&
 source ~/.profile &&
-nvm install 12.17.0 &&
-nvm alias default 12.17.0 &&
+nvm install 14.15.4 &&
+nvm alias default 14.15.4 &&
 
 #Instalando o yarn
 echo 'Instalando Yarn'
