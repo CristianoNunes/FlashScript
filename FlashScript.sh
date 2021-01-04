@@ -14,11 +14,11 @@ sudo apt-get dist-upgrade -y &&
 
 #Instalando curl'
 echo 'Instalando curl' 
-sudo apt install curl -y
+sudo apt install curl -y &&
 
 #Instalando Git
 echo 'Instalando git' 
-sudo apt install git -y
+sudo apt install git -y &&
 
 #Configurando usuario do GIT
 echo "Qual seu nome de usuario GIT?"
@@ -71,7 +71,7 @@ yarn global add create-react-app &&
 #Instalando Zoom
 echo 'Instalando Zoom'
 wget https://zoom.us/client/latest/zoom_amd64.deb &&
-sudo dpkg -i zoom_amd64.deb
+sudo dpkg -i zoom_amd64.deb &&
 
 #Instalando Slack
 echo 'Instalando Slack'
@@ -131,4 +131,4 @@ sudo apt-get remove --purge libreoffice* -y &&
 sudo apt-get clean &&
 
 #Atualizando pacotes
-sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade && sudo apt autoremove -y &&
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade && sudo apt autoremove -y
