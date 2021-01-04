@@ -59,15 +59,6 @@ sudo update-alternatives --config java &&
 echo 'Instalando libs do Android Studio'
 sudo apt-get install gcc-multilib lib32z1 lib32stdc++6 &&
 
-#Instalando React Native
-echo 'Instalando React Native'
-npm install -g react-native &&
-npm install -g react-native-cli &&
-
-#Instalando ReactJS
-echo 'Instalando ReactJS'
-yarn global add create-react-app &&
-
 #Instalando Visual Studio Code
 echo 'Instalando Visual Studio Code'
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" &&
