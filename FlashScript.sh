@@ -140,6 +140,13 @@ wget http://kdl.cc.ksosoft.com/wps-community/download/6757/wps-office_10.1.0.675
 sudo tar Jxf wpsoffice.tar.xz -C /opt/ &&
 sudo mv /opt/wps*/ /opt/wpsoffice &&
 
+#Instalando TeamViewer
+echo 'Instalando TeamViewer'
+wget https://download.teamviewer.com/download/linux/teamviewer_amd64.tar.xz -O teamviewer.tar.xz &&
+sudo tar -xJf teamviewer.tar.xz &&
+sudo mv ~/teamviewer /opt &&
+sudo ln -sf /opt/teamviewer/teamviewer /usr/bin/teamviewer &&
+
 #Limpando repositórios de pacotes
 sudo apt-get clean &&
 
