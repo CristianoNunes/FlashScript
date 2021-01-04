@@ -118,6 +118,12 @@ snap install spotify &&
 #Instalando Shotwell Photo Manager
 sudo add-apt-repository ppa:yg-jensge/shotwell -y && sudo apt update && sudo apt install shotwell -y &&
 
+#Instalando Tema de Ícones Papirus
+echo 'Instalando Tema de Ícones Papirus'
+sudo add-apt-repository ppa:varlesh-l/papirus-pack -y &&
+sudo apt-get update &&
+sudo apt-get install papirus-gtk-icon-theme -y &&
+
 #Removendo Libre Office
 sudo apt-get remove --purge libreoffice* -y &&
 
