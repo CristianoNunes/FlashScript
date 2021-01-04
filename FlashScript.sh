@@ -48,7 +48,7 @@ sudo apt update &&
 sudo apt install --no-install-recommends yarn -y &&
 
 #Instalando Oracle JDK 8
-echo 
+echo 'Instalando Oracle JDK8'
 sudo add-apt-repository ppa:openjdk-r/ppa -y &&
 sudo apt-get update &&
 sudo apt-get install openjdk-8-jdk &&
@@ -59,8 +59,13 @@ sudo update-alternatives --config java &&
 sudo apt-get install gcc-multilib lib32z1 lib32stdc++6 &&
 
 #Instalando React Native
+echo 'Instalando React Native'
 npm install -g react-native &&
 npm install -g react-native-cli &&
+
+#Instalando Slack
+echo 'Instalando Slack'
+sudo apt-get install slack-desktop -y &&
 
 #Instalando VirtualBox
 sudo sh -c 'echo "deb http://download.virtualbox.org/virtualbox/debian $(lsb_release -cs) contrib" >> /etc/apt/sources.list.d/virtualbox.list' &&
