@@ -73,7 +73,13 @@ echo 'Instalando Visual Studio Code'
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" &&
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add - &&
 sudo apt-get update &&
-sudo apt-get install code &&
+sudo apt-get install code -y &&
+
+#Instalando Synapse
+echo 'Instalando Synapse'
+sudo add-apt-repository ppa:synapse-core/ppa &&
+sudo apt-get update &&
+sudo apt-get install synapse -y &&
 
 #Instalando Zoom
 echo 'Instalando Zoom'
