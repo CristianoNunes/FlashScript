@@ -131,9 +131,9 @@ sudo add-apt-repository ppa:yg-jensge/shotwell -y && sudo apt update && sudo apt
 
 #Instalando Tema de Ícones Papirus
 echo 'Instalando Tema de Ícones Papirus'
-sudo add-apt-repository ppa:varlesh-l/papirus-pack -y &&
+sudo add-apt-repository ppa:papirus/papirus -y &&
 sudo apt-get update &&
-sudo apt-get install papirus-gtk-icon-theme -y &&
+sudo apt-get install papirus-icon-theme -y &&
 
 #Removendo Libre Office
 sudo apt-get remove --purge libreoffice* -y &&
